@@ -3,13 +3,105 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>Aibeisi Technology Development Co., Ltd.</title>
-<meta name="keywords" content="Aibeisi Technology Development Co., Ltd." />
-<meta name="description" content="Aibeisi Technology Development Co., Ltd." />
+<title>Aibeisi Technology Development Co., Ltd. </title>
+<meta name="keywords" content="Aibeisi Technology Development Co., Ltd. " />
+<meta name="description" content="Aibeisi Technology Development Co., Ltd. " />
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+<link href="style/demo2/css/style.css" rel="stylesheet" type="text/css" />
+<style>
+.none {
+	display: none !important
+}
+ @media screen and (max-width: 640px) {
+#mobileFrame {
+	display: none !important;
+}
+}
+.qrcode {
+	width: 290px;
+	height: 300px;
+	background: #f7f7f7;
+	padding-top: 100px; text-align:center
+}
+.qrcode table {
+	vertical-align: middle;
+	text-align: center;
+	margin: 0px auto;
+	width: 200px;
+	padding: 1px;
+	border: 1px solid #ccc;
+	background: #fff;
+}
+.qrcode p {
+	text-align: center;
+	height: 36px;
+	font-size: 15px;
+	font-family: "微软雅黑 Light";
+	color: #ff0000;
+	line-height: 36px;
+}
+ @media screen and (min-width: 640px) {
+.coright {
+	position: absolute;
+	bottom: 0px;
+	height: 24px;
+	line-height: 24px;
+	color: #666;
+	text-align: center;
+	background: #fff;
+	width: 100%;
+}
+}
+</style>
+<script type="text/javascript" src="style/demo2/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="style/demo2/js/jquery.qrcode.js"></script>
+<script type="text/javascript" src="style/demo2/js/qrcode.js"></script>
+<script language="javascript">
+
+//if (self!=top) window.top.location.href="http://www.eh300.com/";  
+
+</script>
 </head>
 
 <body>
 <iframe id="iframe" src="http://nunacaicai43.wz.hwdlszywz.net/vip_nunacaicai43.html" frameborder="0"  width="100%"></iframe>
+
+
+
+<script type="text/javascript">
+	jQuery('#qrcode').qrcode({width: 180,height: 180,text: $("#iframe").attr("src")});
+  </script> 
+  <script>
+window.onload=function  () {
+    var hidemobilebtn=document.getElementById("hidemobile");
+    var showmobilebtn=document.getElementById("showmobile");
+    var mobileframe=document.getElementById("mobileFrame");
+    if(!hidemobilebtn) return false;
+    if(!showmobilebtn) return false;
+    if(!mobileframe) return false;
+    hidemobilebtn.onclick=function(){
+        mobileframe.style.display="none";
+        showmobilebtn.style.display="block";
+    }
+    showmobilebtn.onclick=function(){
+        this.style.display="none";
+        mobileframe.style.display="";
+    }
+}
+document.getElementById("mobileFrame").getElementsByTagName("iframe")[0].onload=function(){this.style.width="301px";}
+</script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+  $("#hidemobile").click(function(){
+
+    $("#mobileFrame").slideToggle();
+
+  });
+
+});
+
+</script>
 </body>
 </html>
